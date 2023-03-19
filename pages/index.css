@@ -1,3 +1,22 @@
 /* Подключение стороннего файла стилей */
 @import url(../vendor/normalize.css);
 
+/* Подключение шрифтов с их стилями */
+
+/* Стили страницы */
+@import url(../blocks/page/page.css);
+
+/* Блок header с логотипом */
+@import url(../blocks/header/header.css);
+
+/* Основное содержимое страницы */
+@import url(../blocks/content/content.css);
+
+/* Блок profile (аватар и инфа о человеке) */
+@import url(../blocks/profile/profile.css);
+
+/* Блок elements (галерея фотографий) */
+@import url(../blocks/elements/elements.css);
+
+/* Блок footer */
+@import url(../blocks/footer/footer.css);
