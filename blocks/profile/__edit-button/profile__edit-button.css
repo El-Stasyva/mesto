@@ -1,0 +1,10 @@
+.profile__edit-button {
+  grid-area: edit-button;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/profile-info-pencil.svg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* transform: scaleX(-1); для спецсимвола */
+}

@@ -16,6 +16,12 @@
 
 /* Блок profile (аватар и инфа о человеке) */
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__full-name/profile__full-name.css);
+@import url(../blocks/profile/__activity/profile__activity.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
 
 /* Блок elements (галерея фотографий) */
 @import url(../blocks/elements/elements.css);

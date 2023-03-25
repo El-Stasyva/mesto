@@ -1,0 +1,14 @@
+.profile__info {
+  display: grid;
+  /*max-width: 336px;
+  min-height: 73px;*/
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  grid-template-areas:
+    "full-name edit-button"
+    "activity activity";
+  row-gap: 16px;
+  column-gap: 18px;
+  align-content: center;
+  z-index: 0;
+}
