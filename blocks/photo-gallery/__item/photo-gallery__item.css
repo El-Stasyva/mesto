@@ -1,0 +1,19 @@
+.photo-gallery__item {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, max-content));
+  grid-template-rows: repeat(auto-fit, minmax(min-content, 282px));
+  grid-template-areas:
+    "image image"
+    "heading like";
+  row-gap: 25px;
+  background-color: #fff;
+  align-items: start;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .photo-gallery__item {
+    max-width: 282px;
+    height: 361px;
+  }
+}

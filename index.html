@@ -8,25 +8,58 @@
 </head>
 <body>
   <div class="page">
+    <!-- Логотип соцсети в шапке страницы -->
     <header class="header">
       <img class="header__logo" src="./images/header_logo.svg" alt="Логотип сервиса Mesto">
     </header>
     <main class="content">
+      <!-- Раздел с информацией о пользователе -->
       <section class="profile">
-        <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Фотография владельца профиля">
         <div class="profile__info">
+          <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Фотография владельца профиля">
           <h1 class="profile__full-name">Жак-Ив Кусто</h1>
           <h2 class="profile__activity">Исследователь океана</h2>
-          <button class="profile__edit-button"></button> <!--спецсимвол карандаш &#x270E; -->
+          <button class="profile__edit-button"></button>
         </div>
         <button class="profile__add-button"></button>
       </section>
-      <section class="elements">
-
+      <!-- Раздел с фотографиями -->
+      <section class="photo-gallery">
+        <div class="photo-gallery__item">
+          <img class="photo-gallery__image" src="./images/photo-gallery-Karachayevsk.jpg" alt="Древнее здание">
+          <h3 class="photo-gallery__heading">Карачаевск</h3>
+          <button class="photo-gallery__like"></button>
+        </div>
+        <div class="photo-gallery__item">
+          <img class="photo-gallery__image" src="./images/photo-gallery-mount-Elbrus.jpg" alt="Гора в далеке">
+          <h3 class="photo-gallery__heading">Гора Эльбрус</h3>
+          <button class="photo-gallery__like"></button>
+        </div>
+        <div class="photo-gallery__item">
+          <img class="photo-gallery__image" src="./images/photo-gallery-Dombay.jpg" alt="Леса и горы">
+          <h3 class="photo-gallery__heading">Домбай</h3>
+          <button class="photo-gallery__like"></button>
+        </div>
+        <div class="photo-gallery__item">
+          <img class="photo-gallery__image" src="./images/photo-gallery-mount-Elbrus.jpg" alt="Гора в далеке">
+          <h3 class="photo-gallery__heading">Гора Эльбрус</h3>
+          <button class="photo-gallery__like"></button>
+        </div>
+        <div class="photo-gallery__item">
+          <img class="photo-gallery__image" src="./images/photo-gallery-Dombay.jpg" alt="Леса и горы">
+          <h3 class="photo-gallery__heading">Домбай</h3>
+          <button class="photo-gallery__like"></button>
+        </div>
+        <div class="photo-gallery__item">
+          <img class="photo-gallery__image" src="./images/photo-gallery-Karachayevsk.jpg" alt="Древнее здание">
+          <h3 class="photo-gallery__heading">Карачаево-Черкесия</h3>
+          <button class="photo-gallery__like"></button>
+        </div>
       </section>
     </main>
+    <!-- Подвал сайта с информацией об авторе -->
     <footer class="footer">
-      
+      <article class="footer__author">© 2020 Mesto Russia</article>
     </footer>
   </div>
 </body>

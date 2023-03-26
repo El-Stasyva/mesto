@@ -1,3 +1,13 @@
 .profile {
   display: flex;
+  max-width: 880px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 910px) {
+  .profile {
+    max-width: 88.13%;
+    flex-direction: column;
+  }
 }

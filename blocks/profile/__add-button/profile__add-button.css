@@ -1,9 +1,23 @@
 .profile__add-button {
+  box-sizing: border-box;
+  box-shadow: none;
   width: 150px;
   height: 50px;
-  /*position: absolute;
-  right: 0;
-  bottom: 35px;*/
-  background-image: url(../../../images/profile-info-Add-Button.svg);
-  z-index: 1;
+  padding: 0;
+  margin-top: 35px;
+  background-image: url(../../../images/profile-Add-Button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  border: 2px solid #FFFFFF;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 910px) {
+  .profile__add-button {
+    width: 282px;
+    margin: 0 auto;
+    margin-top: 34px;
+    background-image: url(../../../images/profile-Add-Button-mobile.svg);
+  }
 }
