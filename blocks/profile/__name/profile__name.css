@@ -1,4 +1,4 @@
-.profile__full-name {
+.profile__name {
   grid-area: full-name;
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 910px) {
-  .profile__full-name {
+  .profile__name {
     font-size: 27px;
     line-height: 1.22;
     align-self: center;

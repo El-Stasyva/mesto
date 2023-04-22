@@ -1,0 +1,20 @@
+.popup__close-ikon {
+  width: 32px;
+  min-height: 32px;
+  margin: 0;
+  padding: 0;
+  background-image: url(../../../images/popup-Close-Icon.svg);
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+  position: relative;
+  bottom: 106%;
+  left: 55%;
+  border: none;
+}
+
+@media screen and (max-width: 910px) {
+  .popup__close-ikon {
+    background-size: 20px 20px;
+    left: 48.5%;
+  }
+}

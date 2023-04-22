@@ -1,4 +1,4 @@
-.profile__activity {
+.profile__about-me {
   grid-area: activity;
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 910px) {
-  .profile__activity {
+  .profile__about-me {
     font-size: 14px;
     line-height: 1.21;
     text-align: center;
