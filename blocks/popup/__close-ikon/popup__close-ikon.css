@@ -12,6 +12,11 @@
   border: none;
 }
 
+.popup__close-ikon:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 910px) {
   .popup__close-ikon {
     background-size: 20px 20px;
