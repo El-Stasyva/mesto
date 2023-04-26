@@ -1,11 +1,13 @@
 .popup__text {
-  width: 358px;
-  height: 26px;
+  /* Если указать width=100% - инпут растягивается по всей ширине контейнера,
+  настройка margin и padding по ширине не срабатывает, поэтому я применила min-width */
+  min-width: 358px;
   margin: 0;
-  margin-bottom: 44px;
+  margin-bottom: 43px;
   padding: 0;
+  padding-bottom: 13px;
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
   font-size: 14px;
   line-height: 1.21;
   font-weight: 400;
@@ -13,8 +15,7 @@
 
 @media screen and (max-width: 910px) {
   .popup__text {
-    width: 238px;
-    margin-bottom: 30px;
-    font-size: 18px;
+    min-width: 238px;
+    margin-bottom: 26px;
   }
 }

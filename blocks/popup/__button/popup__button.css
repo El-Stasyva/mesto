@@ -1,5 +1,7 @@
 .popup__button {
-  width: 358px;
+   /* Если указать width=100% - кнопка растягивается по всей ширине контейнера,
+  настройка margin и padding по ширине не срабатывает, поэтому я применила min-width */
+  min-width: 358px;
   min-height: 50px;
   margin-bottom: 34px;
   color: #fff;
@@ -18,7 +20,7 @@
 
 @media screen and (max-width: 910px) {
   .popup__button {
-    width: 238px;
+    min-width: 238px;
     min-height: 46px;
     margin-top: 15px;
     margin-bottom: 25px;

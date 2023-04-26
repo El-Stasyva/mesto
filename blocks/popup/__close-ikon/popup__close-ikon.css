@@ -7,8 +7,8 @@
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0);
   position: relative;
-  bottom: 106%;
-  left: 55%;
+  top: -113%;
+  right: -56%;
   border: none;
 }
 
@@ -20,6 +20,7 @@
 @media screen and (max-width: 910px) {
   .popup__close-ikon {
     background-size: 20px 20px;
-    left: 48.5%;
+    top: -111%;
+    right: -49%;
   }
 }

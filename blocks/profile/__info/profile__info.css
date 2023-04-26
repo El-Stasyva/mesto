@@ -12,10 +12,14 @@
 
 @media screen and (max-width: 910px) {
   .profile__info {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    position: relative;
-    flex-direction: column;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas:
+      "avatar avatar"
+      "full-name edit-button"
+      "activity activity";
+    row-gap: 8px;
+    column-gap: 10px;
+    justify-content: center;
   }
 }

@@ -15,14 +15,14 @@
 
 .profile__add-button:hover {
   opacity: 0.6;
-  cursor: pointer;
+  cursor: url(../../../images/cursor-hand.svg), none;
 }
 
 @media screen and (max-width: 910px) {
   .profile__add-button {
     width: 282px;
     margin: 0 auto;
-    margin-top: 34px;
+    margin-top: 32px;
     background-image: url(../../../images/profile-Add-Button-mobile.svg);
   }
 }

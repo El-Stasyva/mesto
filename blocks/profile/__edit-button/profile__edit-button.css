@@ -4,7 +4,7 @@
   width: 24px;
   height: 24px;
   padding: 0;
-  margin-bottom: 8px;
+  margin-bottom: 9px;
   background-image: url(../../../images/profile-info-pencil.svg);
   background-color: #000;
   background-repeat: no-repeat;
@@ -22,8 +22,6 @@
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    position: absolute;
-    right: 19px;
-    top: 153px;
+    justify-self: end;
   }
 }
