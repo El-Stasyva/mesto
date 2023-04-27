@@ -10,5 +10,6 @@
     display: grid;
     max-width: 88.13%;
     flex-direction: column;
+    justify-content: center;
   }
 }

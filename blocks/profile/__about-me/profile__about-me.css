@@ -1,5 +1,6 @@
 .profile__about-me {
   grid-area: activity;
+  max-width: 336px;
   margin: 0;
   padding: 0;
   font-size: 18px;
