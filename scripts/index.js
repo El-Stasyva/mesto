@@ -19,6 +19,8 @@ let profileJob = profile.querySelector('.profile__about-me');
 // Кликаем на карандаш для перехода в попап
 editButton.addEventListener('click', function() {
   popup.classList.add('popup_opened');
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
 })
 
 function popupClose() {
@@ -33,6 +35,8 @@ function handleFormSubmit (evt) {
                                                 // О том, как это делать, расскажем позже.
 
     // Получите значение полей jobInput и nameInput из свойства value
+    nameInput.getAttribute('value');
+    jobInput.getAttribute('value');
 
     // Выберите элементы, куда должны быть вставлены значения полей
 
