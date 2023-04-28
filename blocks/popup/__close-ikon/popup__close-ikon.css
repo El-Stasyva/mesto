@@ -1,4 +1,5 @@
 .popup__close-ikon {
+  /*grid-area: close-ikon;*/
   width: 32px;
   min-height: 32px;
   margin: 0;
@@ -7,9 +8,10 @@
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0);
   position: relative;
-  top: -113%;
-  right: -56%;
+  top: -330px;
+  right: -77px;
   border: none;
+  align-self: flex-end;
 }
 
 .popup__close-ikon:hover {
@@ -20,7 +22,7 @@
 @media screen and (max-width: 910px) {
   .popup__close-ikon {
     background-size: 20px 20px;
-    top: -111%;
-    right: -49%;
+    top: -333px;
+    right: -34px;
   }
 }

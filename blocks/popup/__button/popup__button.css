@@ -1,9 +1,9 @@
 .popup__button {
-   /* Если указать width=100% - кнопка растягивается по всей ширине контейнера,
-  настройка margin и padding по ширине не срабатывает, поэтому я применила min-width */
-  min-width: 358px;
+  width: 100%;
   min-height: 50px;
-  margin-bottom: 34px;
+  margin: 0;
+  /*margin-bottom: 34px;*/
+  padding: 0;
   color: #fff;
   background-color: #000;
   border-radius: 2px;
@@ -22,8 +22,9 @@
   .popup__button {
     min-width: 238px;
     min-height: 46px;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin-top: 16px;
+    
+    /*margin-bottom: 25px;*/
     font-size: 14px;
   }
 }

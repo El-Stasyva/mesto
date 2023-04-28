@@ -1,22 +1,29 @@
 let popup = document.querySelector('.popup');
 
-let profile = document.querySelector('.profile');
-let editButton = profile.querySelector('.profile__edit-button');
-
-let profileName = profile.querySelector('.profile__name');
-let profileJob = profile.querySelector('.profile__about-me');
-
-// Кликаем на карандаш для перехода в попап
-editButton.addEventListener('click', function() {
-  popup.classList.add('popup_opened');
-})
-
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__container');
 
 // Находим поля формы в DOM
 let nameInput = formElement.querySelector('#name');
 let jobInput = formElement.querySelector('#job');
+
+let popupCloseIcon = formElement.querySelector('.popup__close-ikon');
+
+let profile = document.querySelector('.profile');
+let editButton = profile.querySelector('.profile__edit-button');
+
+let profileName = profile.querySelector('.profile__name');
+let profileJob = profile.querySelector('.profile__about-me');
+
+
+// Кликаем на карандаш для перехода в попап
+editButton.addEventListener('click', function() {
+  popup.classList.add('popup_opened');
+})
+
+function popupClose() {
+  popup.classList.remove('popup_opened');
+}
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -25,8 +32,6 @@ function handleFormSubmit (evt) {
                                                 // Так мы можем определить свою логику отправки.
                                                 // О том, как это делать, расскажем позже.
 
-    nameInput.setAttribute('value', 'Жак-Ив Кусто');                                            
-    jobInput.setAttribute('value', 'Исследователь океана');
     // Получите значение полей jobInput и nameInput из свойства value
 
     // Выберите элементы, куда должны быть вставлены значения полей
@@ -34,21 +39,13 @@ function handleFormSubmit (evt) {
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     // Вставьте новые значения с помощью textContent
-}
-
-function PopupClose() {
-  popup.classList.remove('popup_opened');
+    
+    popupClose();
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit);
 
-let popupButton = formElement.querySelector('.popup__button');
-
-// Нажатие кнопки Сохранить в форме попапа
-
-let popupCloseIcon = formElement.querySelector('.popup__close-ikon');
-
 // Нажатие крестика для для выхода из формы попапа без отправки значений
-popupCloseIcon.addEventListener('click', PopupClose);
+popupCloseIcon.addEventListener('click', popupClose);
