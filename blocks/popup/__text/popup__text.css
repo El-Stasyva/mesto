@@ -11,19 +11,9 @@
   font-weight: 400;
 }
 
-/*.popup__text:first-child {
-  margin-top: 101px;
-}
-*/
 @media screen and (max-width: 910px) {
   .popup__text {
     min-width: 238px;
     margin-bottom: 28px;
   }
 }
-
-/*@media screen and (max-width: 910px) {
-  .popup__text:first-child {
-    margin-top: 122px;
-  }
-}*/

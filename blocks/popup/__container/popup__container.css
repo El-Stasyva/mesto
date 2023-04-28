@@ -1,5 +1,4 @@
 .popup__container {
- /* grid-area: container;*/
   display: flex;
   box-sizing: border-box;
   width: 430px;
@@ -10,8 +9,6 @@
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  /*z-index: 0;*/
-  /*order: 2;*/
 }
 
 @media screen and (max-width: 910px) {
@@ -19,6 +16,5 @@
     width: 282px;
     height: 322px;
     padding: 25px 22px;
-    /*margin-top: 123px;*/
   }
 }

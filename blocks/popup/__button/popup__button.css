@@ -2,7 +2,6 @@
   width: 100%;
   min-height: 50px;
   margin: 0;
-  /*margin-bottom: 34px;*/
   padding: 0;
   color: #fff;
   background-color: #000;
@@ -23,8 +22,6 @@
     min-width: 238px;
     min-height: 46px;
     margin-top: 16px;
-    
-    /*margin-bottom: 25px;*/
     font-size: 14px;
   }
 }
