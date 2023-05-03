@@ -1,14 +1,17 @@
 .popup__close-ikon {
   width: 32px;
-  min-height: 32px;
+  height: 32px;
   margin: 0;
   padding: 0;
   background-image: url(../../../images/popup-Close-Icon.svg);
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-color: rgba(0, 0, 0, 0);
-  position: relative;
-  top: -330px;
-  right: -77px;
+  position: absolute;
+  /* Указаны координаты в соответствии с макетом; и учетом паддингов контейнера - для правильного расположения
+  кнопки закрытия попапа, по макету. */
+  top: calc(-8px + -36px);
+  right: calc(-8px + -34px);
   border: none;
   align-self: flex-end;
 }
@@ -20,8 +23,11 @@
 
 @media screen and (max-width: 910px) {
   .popup__close-ikon {
-    background-size: 20px 20px;
-    top: -333px;
-    right: -34px;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+     /* Указаны координаты в соответствии с макетом и учетом паддингов контейнера. */
+    top: calc(-16px + -22px);
+    right: 0;
   }
 }
