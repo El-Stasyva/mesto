@@ -1,14 +1,19 @@
 .profile__about-me {
   grid-area: activity;
+  max-width: 336px;
   margin: 0;
   padding: 0;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.22;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 910px) {
   .profile__about-me {
+    max-width: 282px;
     font-size: 14px;
     line-height: 1.21;
     text-align: center;

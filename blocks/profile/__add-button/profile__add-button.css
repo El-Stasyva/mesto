@@ -22,7 +22,7 @@
   .profile__add-button {
     width: 282px;
     margin: 0 auto;
-    margin-top: 34px;
+    margin-top: 32px;
     background-image: url(../../../images/profile-Add-Button-mobile.svg);
   }
 }
