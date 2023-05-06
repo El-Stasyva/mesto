@@ -18,5 +18,6 @@
     font-size: 27px;
     line-height: 1.22;
     padding-left: 30px;
+    justify-self: end;
   }
 }
