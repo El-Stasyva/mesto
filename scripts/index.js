@@ -1,81 +1,181 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+// Переменные для работы с карточками в галерее фотографий
+const cardTemplate = document.querySelector('#card-template');
+const photoGallerySection = document.querySelector('.photo-gallery');
+
+const cardImage = document.querySelector('.photo-gallery__image');
+const cardHeading = document.querySelector('.photo-gallery__heading');
+
+// Переменные для работы с кнопками на главной странице ("редактировать профиль" и "добавить карточку с местом")
+const profile = document.querySelector('.profile');
+const editButton = document.querySelector('.profile__edit-button');
+const addButton = document.querySelector('.profile__add-button');
+
+
+// Переменные для работы с попапами и кнопками попапов
+const popup = document.querySelector('.popup');
+const saveCardButton = document.querySelector('#save-button');
+
+// Попап редактирования профиля
+const popupInfo = document.querySelector('#popup-info');
+const infoElement = popupInfo.querySelector('#c-info');
+
+const nameInput = infoElement.querySelector('#name');
+const jobInput = infoElement.querySelector('#job');
+
+// Попап добавления карточки с местом
+const popupCard = document.querySelector('#popup-card');
+
+
+const cardElement = document.querySelector('#c-card');
+const titleInput = cardElement.querySelector('#card-title');
+const linkInput = cardElement.querySelector('#card-link');
+
+// Переменные для работы с данными в профиле пользователя на главной странице
+const profileName = profile.querySelector('.profile__name');
+const profileJob = profile.querySelector('.profile__about-me');
+
+
+// Добавление 6 карточек при загрузке страницы c помощью JS (функция рендера)
+const getCardElement = function (cardInfo) {
+  const itemCardElement = cardTemplate.content.querySelector('.photo-gallery__item').cloneNode(true);
+
+  const cardImage = itemCardElement.querySelector('.photo-gallery__image');
+  const cardHeading = itemCardElement.querySelector('.photo-gallery__heading');
+  const cardDeleteButton = itemCardElement.querySelector('.photo-gallery__trash');
+  const cardLikeButton = itemCardElement.querySelector('.photo-gallery__like');
+
+  const popupImageContainer = document.querySelector('#p-popup');
+
+  const popupBigImg = popupImageContainer.querySelector('.popup-picture__image');
+  const popupTitleImg = popupImageContainer.querySelector('.popup-picture__title');
+
+  const popupImgExit = document.querySelector('#img-exit');
+
+// Задаем какие необходимы параметры значений карточек из массива для дальнейшей вставки
+  cardImage.src = cardInfo.link;
+  cardImage.alt = cardInfo.name;
+  cardHeading.textContent = cardInfo.name;
+
+// Удаляем карточку с местом из галереи фотографий
+  const handleDeleteCard = function () {
+    itemCardElement.remove();
+  };
+
+// Нажимаем кнопку "like" для активации или дизактивации сердечка
+  const handleLikeCard = function () {
+    cardLikeButton.classList.toggle('photo-gallery__like_active');
+  };
+
+  //Функция увеличения одной фотографии из галереи
+  const handleBigImg = function() {
+    popupImageContainer.classList.add('popup_opened');
+    popupBigImg.src = cardInfo.link;
+    popupBigImg.alt = cardInfo.name;
+    popupTitleImg.textContent = cardInfo.name;
+    
   }
-];
+  
+  //Закрытие попапа с увеличенной фотогроафией
+  const popupImgClose = function (popupImageContainer) {
+    popupImageContainer.classList.remove('popup_opened');
+  }
 
-let popup = document.querySelector('.popup');
+  
+  //Создаем новую карточку
+  function handleSaveCard (evt) {
+    evt.preventDefault();
 
-// Находим форму в DOM
-let formElement = document.querySelector('.popup__container');
+    const name = titleInput.value;
+    const link = linkInput.value;
 
-// Находим поля формы в DOM
-let nameInput = formElement.querySelector('#name');
-let jobInput = formElement.querySelector('#job');
+    const newItemCardElement = itemCardElement({name, link});
+    cardTemplate.prepend(newItemCardElement);
 
-let popupCloseIcon = formElement.querySelector('.popup__close-ikon');
+    evt.target.reset();
 
-let profile = document.querySelector('.profile');
-let editButton = profile.querySelector('.profile__edit-button');
+    popupImgClose;
+    /*cardHeading.textContent = titleInput.value;
+    cardImage.src = linkInput.value;
+  
+    popup.classList.contains('popup_opened');
+    const newItemCardElement = initialCards.unshift(itemCardElement);
+    console.log(newItemCardElement);*/
+    
+  };
 
-let profileName = profile.querySelector('.profile__name');
-let profileJob = profile.querySelector('.profile__about-me');
+// Вешаем слушатели кнопок
+  /*saveCardButton.addEventListener('click', handleSaveCard);*/
 
-// Кликаем на карандаш для перехода в попап
+  popupImgExit.addEventListener('click', function () {
+    popupImgClose(popupImageContainer);
+  });
+
+  cardImage.addEventListener('click', handleBigImg);
+
+
+  cardDeleteButton.addEventListener('click', handleDeleteCard);
+  cardLikeButton.addEventListener('click', handleLikeCard);
+  
+  return itemCardElement;
+};
+
+// Вставляем значения из карточек массива в галерею фотографий
+initialCards.forEach(function (card) {
+  const element = getCardElement(card);
+
+  photoGallerySection.appendChild(element);
+  
+});
+
+
+
+// Кликаем на карандаш для перехода в попап редактирования профиля
 editButton.addEventListener('click', function() {
-  popup.classList.add('popup_opened');
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-})
+  popupOpen(popupInfo);
+});
 
-function popupClose() {
+
+// Кликаем на кнопку-плюсик для перехода в попап добавления новой карточки с местом
+addButton.addEventListener('click', function() {
+   popupOpen(popupCard);
+ });
+
+
+// Функция закрытия попапа
+const popupClose = function (popup) {
   popup.classList.remove('popup_opened');
 }
 
+// Функция открытия попапа
+const popupOpen = function (popup) {
+  popup.classList.add('popup_opened');
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-function handleFormSubmit (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  const popupCloseButton = popup.querySelector('.popup__close-ikon');
 
-                                                // Так мы можем определить свою логику отправки.
-
-                                                // О том, как это делать, расскажем позже.
-
-    // Получите значение полей jobInput и nameInput из свойства value
-
-    // Выберите элементы, куда должны быть вставлены значения полей
-    profileName.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
-
-    // Вставьте новые значения с помощью textContent
-    popupClose();
+  popupCloseButton.addEventListener('click', function () {
+    popupClose(popup)});
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', handleFormSubmit);
 
-// Нажатие крестика для для выхода из формы попапа без отправки значений
-popupCloseIcon.addEventListener('click', popupClose);
+
+// Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
+function handleInfoSubmit (evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+                                              // Так мы можем определить свою логику отправки.
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+  popup.classList.contains('popup_opened');
+  popupClose(popup);
+}
+
+// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
+infoElement.addEventListener('submit', handleInfoSubmit);
+
+
+
+// Обработчик «отправки» формы попапа с добавлением карточки места
+/*cardElement.addEventListener('submit', getCardElement);*/
+
+

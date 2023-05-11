@@ -1,0 +1,11 @@
+.popup-picture__title {
+  min-width: 12px;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.21;
+  font-weight: 400;
+  align-self: flex-start;
+}

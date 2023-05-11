@@ -25,77 +25,87 @@
       </section>
       <!-- Раздел с фотографиями -->
       <section class="photo-gallery">
-        <article class="photo-gallery__item">
+        <!-- <article class="photo-gallery__item">
           <img class="photo-gallery__image" src="./images/photo-gallery-Karachayevsk.jpg" alt="Древнее здание">
           <button type="button" class="photo-gallery__trash"></button>
           <h2 class="photo-gallery__heading">Карачаевск</h2>
-          <!-- Булевый модификатор кнопки _active подготовила: описала в css, подключила в index.css -->
           <button type="button" class="photo-gallery__like"></button>
         </article>
         <article class="photo-gallery__item">
           <img class="photo-gallery__image" src="./images/photo-gallery-mount-Elbrus.jpg" alt="Гора в далеке">
           <button type="button" class="photo-gallery__trash"></button>
           <h2 class="photo-gallery__heading">Гора Эльбрус</h2>
-          <!-- Булевый модификатор кнопки _active подготовила: описала в css, подключила в index.css -->
           <button type="button" class="photo-gallery__like"></button>
         </article>
         <article class="photo-gallery__item">
           <img class="photo-gallery__image" src="./images/photo-gallery-Dombay.jpg" alt="Леса и горы">
           <button type="button" class="photo-gallery__trash"></button>
           <h2 class="photo-gallery__heading">Домбай</h2>
-          <!-- Булевый модификатор кнопки _active подготовила: описала в css, подключила в index.css -->
           <button type="button" class="photo-gallery__like"></button>
         </article>
         <article class="photo-gallery__item">
           <img class="photo-gallery__image" src="./images/photo-gallery-mount-Elbrus.jpg" alt="Гора в далеке">
           <button type="button" class="photo-gallery__trash"></button>
           <h2 class="photo-gallery__heading">Гора Эльбрус</h2>
-          <!-- Булевый модификатор кнопки _active подготовила: описала в css, подключила в index.css -->
           <button type="button" class="photo-gallery__like"></button>
         </article>
         <article class="photo-gallery__item">
           <img class="photo-gallery__image" src="./images/photo-gallery-Dombay.jpg" alt="Леса и горы">
           <button type="button" class="photo-gallery__trash"></button>
           <h2 class="photo-gallery__heading">Домбай</h2>
-          <!-- Булевый модификатор кнопки _active подготовила: описала в css, подключила в index.css -->
           <button type="button" class="photo-gallery__like"></button>
         </article>
         <article class="photo-gallery__item">
           <img class="photo-gallery__image" src="./images/photo-gallery-Karachayevsk.jpg" alt="Древнее здание">
           <button type="button" class="photo-gallery__trash"></button>
           <h2 class="photo-gallery__heading">Карачаево-Черкесия</h2>
-          <!-- Булевый модификатор кнопки _active подготовила: описала в css, подключила в index.css -->
           <button type="button" class="photo-gallery__like"></button>
-        </article>
+        </article> -->
       </section>
     </main>
     <!-- Подвал сайта с информацией об авторе -->
     <footer class="footer">
       <p class="footer__author">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
-      <div class="popup__container">
+    <div class="popup" id="popup-info">
+      <div class="popup__container" id="c-info">
         <h3 class="popup__heading">Редактировать профиль</h3>
-        <form class="popup__form" name="popup">
+        <form class="popup__form" name="popup-i">
           <input type="text" class="popup__text" name="name" placeholder="Имя" value="Жак-Ив Кусто" id="name">
           <input type="text" class="popup__text" name="about-me" placeholder="О себе" value="Исследователь океана" id="job">
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
-        <button type ="button" class="popup__close-ikon"></button>
+        <button type ="button" class="popup__close-ikon" id="close-info"></button>
       </div>
     </div>
-    <div class="popup">
-      <div class="popup__container">
+    <div class="popup" id="popup-card">
+      <div class="popup__container" id="c-card">
         <h3 class="popup__heading">Новое место</h3>
-        <form class="popup__form" name="popup-mesto">
-          <input type="text" class="popup__text" name="mesto-title" placeholder="Название" value="Горный Алтай" id="mesto-title">
-          <input type="text" class="popup__text" name="mesto-link" placeholder="Ссылка на картинку" value="https://unsplash.com/example.jpg" id="mesto-link">
-          <button type="submit" class="popup__button">Создать</button>
+        <form class="popup__form" name="popup-c">
+          <input type="text" class="popup__text" name="card-title" placeholder="Название" id="card-title">
+          <input type="text" class="popup__text" name="card-link" placeholder="Ссылка на картинку" id="card-link">
+          <button type="submit" class="popup__button" id="save-button">Создать</button>
         </form>
-        <button type ="button" class="popup__close-ikon"></button>
+        <button type ="button" class="popup__close-ikon" id="close-card"></button>
+      </div>
+    </div>
+    <div class="popup popup_dark" id="p-popup">
+      <div class="popup-picture">
+        <img class="popup-picture__image">
+        <h3 class="popup-picture__title"></h3>
+        <button type ="button" class="popup__close-ikon" id="img-exit"></button>
       </div>
     </div>
   </div>
+  <template id="card-template">
+    <article class="photo-gallery__item">
+      <input type="image" class="photo-gallery__image">
+      <button type="button" class="photo-gallery__trash"></button>
+      <h2 class="photo-gallery__heading"></h2>
+      <button type="button" class="photo-gallery__like"></button>
+    </article>
+  </template>
+  <script src="./scripts/constants.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
