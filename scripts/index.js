@@ -123,7 +123,7 @@ const getCardElement = function (cardInfo) {
 initialCards.forEach(function (card) {
   const element = getCardElement(card);
 
-  photoGallerySection.appendChild(element);
+  photoGallerySection.append(element);
   
 });
 
