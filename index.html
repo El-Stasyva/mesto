@@ -34,9 +34,9 @@
     </footer>
     <!-- Модальное окно, связанное с секцией profile -->
     <div class="popup" id="popup-info">
-      <div class="popup__container" id="c-info">
+      <div class="popup__container">
         <h3 class="popup__heading">Редактировать профиль</h3>
-        <form class="popup__form" name="popup-i">
+        <form class="popup__form" name="popup-i" id="f-info">
           <input type="text" class="popup__text" name="name" placeholder="Имя" id="name">
           <input type="text" class="popup__text" name="about-me" placeholder="О себе" id="job">
           <button type="submit" class="popup__button">Сохранить</button>
@@ -46,9 +46,9 @@
     </div>
     <!-- Модальное окно, связанное с секцией photo-gallery - форма добавления новой карточки места -->
     <div class="popup" id="popup-card">
-      <div class="popup__container" id="c-card">
+      <div class="popup__container">
         <h3 class="popup__heading">Новое место</h3>
-        <form class="popup__form" name="popup-c">
+        <form class="popup__form" name="popup-c" id="f-card">
           <input type="text" class="popup__text" name="card-title" placeholder="Название" id="card-title">
           <input type="text" class="popup__text" name="card-link" placeholder="Ссылка на картинку" id="card-link">
           <button type="submit" class="popup__button" id="save-button">Создать</button>
@@ -57,7 +57,7 @@
       </div>
     </div>
     <!-- Модальное окно, связанное с секцией photo-gallery - увеличение выбранного изображения для просмотра -->
-    <div class="popup popup_theme_dark" id="p-popup">
+    <div class="popup popup_theme_dark" id="popup-image">
       <div class="popup-picture">
         <img class="popup-picture__image" src="#" alt=" ">
         <h3 class="popup-picture__title"></h3>
