@@ -49,7 +49,7 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 
 /* Модификатор попапа в темном виде для всплывающих фотографий */
-@import url(../blocks/popup/_dark/popup_dark.css);
+@import url(../blocks/popup/_theme_dark/popup_theme_dark.css);
 
 /* Всплывающее окно - увеличенное изображение фотографии места */
 @import url(../blocks/popup-picture/popup-picture.css);

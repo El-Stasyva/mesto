@@ -37,8 +37,8 @@
       <div class="popup__container" id="c-info">
         <h3 class="popup__heading">Редактировать профиль</h3>
         <form class="popup__form" name="popup-i">
-          <input type="text" class="popup__text" name="name" placeholder="Имя" value="Жак-Ив Кусто" id="name">
-          <input type="text" class="popup__text" name="about-me" placeholder="О себе" value="Исследователь океана" id="job">
+          <input type="text" class="popup__text" name="name" placeholder="Имя" id="name">
+          <input type="text" class="popup__text" name="about-me" placeholder="О себе" id="job">
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
         <button type ="button" class="popup__close-ikon" id="close-info"></button>
@@ -57,12 +57,12 @@
       </div>
     </div>
     <!-- Модальное окно, связанное с секцией photo-gallery - увеличение выбранного изображения для просмотра -->
-    <div class="popup popup_dark" id="p-popup">
-      <figure class="popup-picture">
-        <img class="popup-picture__image">
-        <figcaption class="popup-picture__title"></figcaption>
+    <div class="popup popup_theme_dark" id="p-popup">
+      <div class="popup-picture">
+        <img class="popup-picture__image" src="#" alt=" ">
+        <h3 class="popup-picture__title"></h3>
         <button type ="button" class="popup__close-ikon" id="img-exit"></button>
-      </figure>
+      </div>
     </div>
   </div>
   <!-- Шаблон вставки карточки места в галерею фотографий с помощью JS -->
