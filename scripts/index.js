@@ -24,8 +24,6 @@ const jobInput = infoElement.querySelector('#job');
 
 // Попап добавления карточки с местом
 const popupCard = document.querySelector('#popup-card');
-
-
 const cardElement = document.querySelector('#c-card');
 const titleInput = cardElement.querySelector('#card-title');
 const linkInput = cardElement.querySelector('#card-link');
@@ -75,44 +73,18 @@ const getCardElement = function (cardInfo) {
     
   }
   
-  //Закрытие попапа с увеличенной фотогроафией
+  //Закрытие попапа с увеличенной фотографией
   const popupImgClose = function (popupImageContainer) {
     popupImageContainer.classList.remove('popup_opened');
   }
 
   
-  //Создаем новую карточку
-  function handleSaveCard (evt) {
-    evt.preventDefault();
-
-    const name = titleInput.value;
-    const link = linkInput.value;
-
-    const newItemCardElement = itemCardElement({name, link});
-    cardTemplate.prepend(newItemCardElement);
-
-    evt.target.reset();
-
-    popupImgClose;
-    /*cardHeading.textContent = titleInput.value;
-    cardImage.src = linkInput.value;
-  
-    popup.classList.contains('popup_opened');
-    const newItemCardElement = initialCards.unshift(itemCardElement);
-    console.log(newItemCardElement);*/
-    
-  };
-
 // Вешаем слушатели кнопок
-  /*saveCardButton.addEventListener('click', handleSaveCard);*/
-
-  popupImgExit.addEventListener('click', function () {
+   popupImgExit.addEventListener('click', function () {
     popupImgClose(popupImageContainer);
   });
 
   cardImage.addEventListener('click', handleBigImg);
-
-
   cardDeleteButton.addEventListener('click', handleDeleteCard);
   cardLikeButton.addEventListener('click', handleLikeCard);
   
@@ -173,9 +145,25 @@ function handleInfoSubmit (evt) {
 // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
 infoElement.addEventListener('submit', handleInfoSubmit);
 
+//Создаем новую карточку
+function handleSaveCard (evt) {
+  evt.preventDefault();
+
+  const name = titleInput.value;
+  const link = linkInput.value;
+
+  // Добавить карточку в начало массива
+  photoGallerySection.prepend(getCardElement({name, link}));
+
+
+// Отчистить форму попапа после отправки
+  evt.target.reset();
+
+  popupClose(popupCard);
+};
 
 
 // Обработчик «отправки» формы попапа с добавлением карточки места
-/*cardElement.addEventListener('submit', getCardElement);*/
+cardElement.addEventListener('submit', handleSaveCard);
 
 

@@ -23,50 +23,16 @@
         </div>
         <button type="button" class="profile__add-button"></button>
       </section>
-      <!-- Раздел с фотографиями -->
+      <!-- Раздел с фотографиями, куда будут вставляться карточки фотографий из массива с помощью шаблона-->
       <section class="photo-gallery">
-        <!-- <article class="photo-gallery__item">
-          <img class="photo-gallery__image" src="./images/photo-gallery-Karachayevsk.jpg" alt="Древнее здание">
-          <button type="button" class="photo-gallery__trash"></button>
-          <h2 class="photo-gallery__heading">Карачаевск</h2>
-          <button type="button" class="photo-gallery__like"></button>
-        </article>
-        <article class="photo-gallery__item">
-          <img class="photo-gallery__image" src="./images/photo-gallery-mount-Elbrus.jpg" alt="Гора в далеке">
-          <button type="button" class="photo-gallery__trash"></button>
-          <h2 class="photo-gallery__heading">Гора Эльбрус</h2>
-          <button type="button" class="photo-gallery__like"></button>
-        </article>
-        <article class="photo-gallery__item">
-          <img class="photo-gallery__image" src="./images/photo-gallery-Dombay.jpg" alt="Леса и горы">
-          <button type="button" class="photo-gallery__trash"></button>
-          <h2 class="photo-gallery__heading">Домбай</h2>
-          <button type="button" class="photo-gallery__like"></button>
-        </article>
-        <article class="photo-gallery__item">
-          <img class="photo-gallery__image" src="./images/photo-gallery-mount-Elbrus.jpg" alt="Гора в далеке">
-          <button type="button" class="photo-gallery__trash"></button>
-          <h2 class="photo-gallery__heading">Гора Эльбрус</h2>
-          <button type="button" class="photo-gallery__like"></button>
-        </article>
-        <article class="photo-gallery__item">
-          <img class="photo-gallery__image" src="./images/photo-gallery-Dombay.jpg" alt="Леса и горы">
-          <button type="button" class="photo-gallery__trash"></button>
-          <h2 class="photo-gallery__heading">Домбай</h2>
-          <button type="button" class="photo-gallery__like"></button>
-        </article>
-        <article class="photo-gallery__item">
-          <img class="photo-gallery__image" src="./images/photo-gallery-Karachayevsk.jpg" alt="Древнее здание">
-          <button type="button" class="photo-gallery__trash"></button>
-          <h2 class="photo-gallery__heading">Карачаево-Черкесия</h2>
-          <button type="button" class="photo-gallery__like"></button>
-        </article> -->
+        
       </section>
     </main>
     <!-- Подвал сайта с информацией об авторе -->
     <footer class="footer">
       <p class="footer__author">© 2020 Mesto Russia</p>
     </footer>
+    <!-- Модальное окно, связанное с секцией profile -->
     <div class="popup" id="popup-info">
       <div class="popup__container" id="c-info">
         <h3 class="popup__heading">Редактировать профиль</h3>
@@ -78,6 +44,7 @@
         <button type ="button" class="popup__close-ikon" id="close-info"></button>
       </div>
     </div>
+    <!-- Модальное окно, связанное с секцией photo-gallery - форма добавления новой карточки места -->
     <div class="popup" id="popup-card">
       <div class="popup__container" id="c-card">
         <h3 class="popup__heading">Новое место</h3>
@@ -89,6 +56,7 @@
         <button type ="button" class="popup__close-ikon" id="close-card"></button>
       </div>
     </div>
+    <!-- Модальное окно, связанное с секцией photo-gallery - увеличение выбранного изображения для просмотра -->
     <div class="popup popup_dark" id="p-popup">
       <figure class="popup-picture">
         <img class="popup-picture__image">
@@ -97,6 +65,7 @@
       </figure>
     </div>
   </div>
+  <!-- Шаблон вставки карточки места в галерею фотографий с помощью JS -->
   <template id="card-template">
     <article class="photo-gallery__item">
       <img class="photo-gallery__image">
