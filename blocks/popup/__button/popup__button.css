@@ -2,14 +2,23 @@
   width: 100%;
   min-height: 50px;
   margin: 0;
+  margin-top: 31px;
   padding: 0;
   color: #fff;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, .2);
   border-radius: 2px;
   border: none;
   font-size: 18px;
   line-height: 1.21;
   font-weight: 400;
+}
+
+.popup__button:valid {
+  background-color: rgba(0, 0, 0);
+}
+
+.popup__button:invalid {
+  background-color: rgba(0, 0, 0, .2);
 }
 
 .popup__button:hover {
@@ -21,7 +30,7 @@
   .popup__button {
     min-width: 238px;
     min-height: 46px;
-    margin-top: 16px;
+    margin-top: 28px;
     font-size: 14px;
   }
 }

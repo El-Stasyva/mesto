@@ -2,7 +2,7 @@
   width: 330px;
   min-height: 23px;
   margin: 0;
-  margin-bottom: 44px;
+  margin-bottom: 41px;
   padding: 0;
   color: #000;
   text-align: left;
@@ -15,7 +15,7 @@
 @media screen and (max-width: 910px) {
   .popup__heading {
     width: 238px;
-    margin-bottom: 75px;
+    margin-bottom: 62px;
     font-size: 18px;
   }
 }

@@ -37,8 +37,10 @@
       <div class="popup__container">
         <h3 class="popup__heading">Редактировать профиль</h3>
         <form class="popup__form" name="popup-i" id="f-info">
-          <input type="text" class="popup__text" name="name" placeholder="Имя" id="name">
-          <input type="text" class="popup__text" name="about-me" placeholder="О себе" id="job">
+          <input type="text" class="popup__input" name="name" placeholder="Имя" id="name">
+          <span class="popup__input-error">Вы пропустили это поле.</span>
+          <input type="text" class="popup__input" name="about-me" placeholder="О себе" id="job">
+          <span class="popup__input-error">Вы пропустили это поле.</span>
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
         <button type ="button" class="popup__close-ikon" id="close-info"></button>
@@ -49,8 +51,10 @@
       <div class="popup__container">
         <h3 class="popup__heading">Новое место</h3>
         <form class="popup__form" name="popup-c" id="f-card">
-          <input type="text" class="popup__text" name="card-title" placeholder="Название" id="card-title">
-          <input type="text" class="popup__text" name="card-link" placeholder="Ссылка на картинку" id="card-link">
+          <input type="text" class="popup__input" name="card-title" placeholder="Название" id="card-title">
+          <span class="popup__input-error">Вы пропустили это поле.</span>
+          <input type="text" class="popup__input" name="card-link" placeholder="Ссылка на картинку" id="card-link">
+          <span class="popup__input-error">Введите адрес сайта.</span>
           <button type="submit" class="popup__button" id="save-button">Создать</button>
         </form>
         <button type ="button" class="popup__close-ikon" id="close-card"></button>
