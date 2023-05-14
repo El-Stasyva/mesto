@@ -1,16 +1,23 @@
 const validationTools = {
-  formElement: '.popup__form',
-  inputElement: '.popup__input',
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
   /*spanSelector: '.popup__input-error',*/
   inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: `.${inputElement.id}-error`, /*'popup__input_type_error'*/ // ??? переменная spanSelector или другую задать????  // `.${formInput.id}-error` - шаблонные строки
+  activeButtonClass: 'popup__button_enabled',
+  inputErrorClass: `.${inputElement.id}-error`, /*'popup__input_type_error'*/ // ??? переменная spanSelector или другая????  // `.${formInput.id}-error` - шаблонные строки
   errorClass: 'popup__input-error_visible'
 };
 
 
+
+
+
+
+
+
 // ф-я покажет ошибку
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, inputErrorClass, errorClass) => {
   // Значение переменной errorElement — ошибка, которая найдена внутри formElement
   const errorElement = formElement.querySelector(inputErrorClass);
   inputElement.classList.add(inputErrorClass);
@@ -21,7 +28,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
 };
 
 // ф-я спрячет ошибку
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, inputErrorClass, errorClass) => {
   const errorElement = formElement.querySelector(inputErrorClass);
   inputElement.classList.remove(inputErrorClass);
   // Скрыть ошибку под полем input
@@ -32,7 +39,7 @@ const hideInputError = (formElement, inputElement) => {
 
 
 // ф-я проверяет элементы на корректность введённых данных и вызывает hideInputError или showInputError
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, inputErrorClass) => {
   formElement.querySelector(inputErrorClass);
   if (!formInput.validity.valid) {
     //Если в поле введены невалидные данные, то вызываем ф-ю показать ошибку
@@ -44,18 +51,9 @@ const checkInputValidity = (formElement, inputElement) => {
 };
 
 
-/*form.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-});
-
-
-formInput.addEventListener('input', function () {
-  checkInputValidity(form, formInput);
-});*/
-
 
 // ф-я для настройки всех полей input
-const setEventListeners = (formElement) => {
+const setEventListeners = (formElement, inputSelector, submitButtonSelector) => {
   // задаем переменную-массив из всех элементов с классом popup__input
   const inputList = Array.from(formElement.querySelectorAll(inputSelector));
 
@@ -80,7 +78,7 @@ const setEventListeners = (formElement) => {
 
 
   // ф-я активации валидации
-  const enableValidation = () => {
+  const enableValidation = (formSelector) => {
     // задаем переменную-массив из всех элементов с классом popup__form
     const formList = Array.from(document.querySelectorAll(formSelector));
     // Обойдем массив в теле функции методом forEach
@@ -109,14 +107,18 @@ const setEventListeners = (formElement) => {
 
 // ф-я отвечает за блокировку кнопки «Отправить»
 // Первый параметр — массив полей, второй — кнопка «submit» у попапов
-const toggleButtonState = (inputList, buttonElement) => {
+const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
   // проверим есть ли в массиве inputList невалидные поля
   if (hasInvalidInput(inputList)) {
     // если да - добавим класс блокировки кнопки
     buttonElement.classList.add(inactiveButtonClass);
+    // и удалим атрибут disabled
+    buttonElement.removeAttribute('disabled');
   } else {
     // иначе - удалим класс блокировки кнопки
     buttonElement.classList.remove(inactiveButtonClass);
+    // и дабавим атрибут disabled
+    buttonElement.setAttribute('disabled', true);
   }
 }
 
