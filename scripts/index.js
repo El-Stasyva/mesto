@@ -1,12 +1,3 @@
-const showInputError = (formElement, inputElement, errorMessage) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add('form__input_type_error');
-  errorElement.textContent = errorMessage;
-  errorElement.classList.add('form__input-error_active');
-};
-
-
-
 // Переменные для работы с карточками в галерее фотографий
 const cardTemplate = document.querySelector('#card-template');
 const photoGallerySection = document.querySelector('.photo-gallery');
@@ -80,10 +71,6 @@ const getCardElement = function (cardInfo) {
   }
   
 // Вешаем слушатели кнопок
-  popupImgExit.addEventListener('click', function () {
-    closePopup(popupImageContainer);
-  });
-
   cardImage.addEventListener('click', handleBigImg);
   cardDeleteButton.addEventListener('click', handleDeleteCard);
   cardLikeButton.addEventListener('click', handleLikeCard);
@@ -99,6 +86,12 @@ initialCards.forEach(function (card) {
   photoGallerySection.append(element);
   
 });
+
+// Событие закрытия попапов
+popupImgExit.addEventListener('click', function () {
+  closePopup(popupImageContainer);
+});
+
 
 
 // Кликаем на карандаш для перехода в попап редактирования профиля
@@ -167,5 +160,3 @@ function handleSaveCard (evt) {
 
 // Обработчик «отправки» формы попапа с добавлением карточки места
 cardElement.addEventListener('submit', handleSaveCard);
-
-

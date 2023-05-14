@@ -36,14 +36,14 @@
     <div class="popup" id="popup-info">
       <div class="popup__container">
         <h3 class="popup__heading">Редактировать профиль</h3>
-        <form class="popup__form" name="popup-i" id="f-info">
+        <form class="popup__form" name="popup-i" id="f-info" novalidate>
           <div class="popup__property">
             <input type="text" class="popup__input" name="name" placeholder="Имя" id="name" minlength="2" maxlength="40" required>
-            <span class="popup__error">Вы пропустили это поле.</span>
+            <span class="popup__input-error name-input-error">Вы пропустили это поле.</span>
           </div>
           <div class="popup__property">
             <input type="text" class="popup__input" name="about-me" placeholder="О себе" id="about-me" minlength="2" maxlength="200" required>
-            <span class="popup__error">Вы пропустили это поле.</span>
+            <span class="popup__input-error about-me-input-error">Вы пропустили это поле.</span>
           </div>
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
@@ -54,14 +54,14 @@
     <div class="popup" id="popup-card">
       <div class="popup__container">
         <h3 class="popup__heading">Новое место</h3>
-        <form class="popup__form" name="popup-c" id="f-card">
+        <form class="popup__form" name="popup-c" id="f-card" novalidate>
           <div class="popup__property">
             <input type="text" class="popup__input" name="card-title" placeholder="Название" id="card-title" minlength="1" maxlength="30" required>
-            <span class="popup__error">Вы пропустили это поле.</span>
+            <span class="popup__input-error card-title-input-error">Вы пропустили это поле.</span>
           </div>
           <div class="popup__property">
             <input type="text" class="popup__input" name="card-link" placeholder="Ссылка на картинку" id="card-link" type="url" required>
-            <span class="popup__error">Введите адрес сайта.</span>
+            <span class="popup__input-error  card-link-input-error">Введите адрес сайта.</span>
           </div>
           <button type="submit" class="popup__button" id="save-button">Создать</button>
         </form>
@@ -86,8 +86,8 @@
       <button type="button" class="photo-gallery__like"></button>
     </article>
   </template>
-  <script src="./scripts/validate.js"></script>
   <script src="./scripts/constants.js"></script>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
