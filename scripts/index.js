@@ -12,7 +12,7 @@ const popupInfo = document.querySelector('#popup-info');
 const infoElement = popupInfo.querySelector('#f-info');
 
 const nameInput = infoElement.querySelector('#name');
-const jobInput = infoElement.querySelector('#job');
+const jobInput = infoElement.querySelector('#about-me');
 
 // Попап добавления карточки с местом
 const popupCard = document.querySelector('#popup-card');
@@ -160,5 +160,3 @@ function handleSaveCard (evt) {
 
 // Обработчик «отправки» формы попапа с добавлением карточки места
 cardElement.addEventListener('submit', handleSaveCard);
-
-
