@@ -5,20 +5,12 @@
   margin-top: 31px;
   padding: 0;
   color: #fff;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: #000;
   border-radius: 2px;
   border: none;
   font-size: 18px;
   line-height: 1.21;
   font-weight: 400;
-}
-
-.popup__button:valid {
-  background-color: rgba(0, 0, 0);
-}
-
-.popup__button:invalid {
-  background-color: rgba(0, 0, 0, .2);
 }
 
 .popup__button:hover {
