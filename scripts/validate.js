@@ -2,34 +2,30 @@ const validationTools = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
-  /*spanSelector: '.popup__input-error',*/
   inactiveButtonClass: 'popup__button_disabled',
-  activeButtonClass: 'popup__button_enabled',
-  inputErrorClass: `.${inputElement.id}-error`, /*'popup__input_type_error'*/ // ??? переменная spanSelector или другая????  // `.${formInput.id}-error` - шаблонные строки
-  errorClass: 'popup__input-error_visible'
+  inputErrorClass: 'popup__input_type_error', // модификатор для input - переключение состояния полей (валидное/не валидное)
+  errorClass: 'popup__input-error_visible'  // модификатор для span - показать/скрыть ошибку
 };
 
 
 
-
-
-
-
-
-// ф-я покажет ошибку
+// ф-я покажет ошибку и подчеркнет поле input красным
 const showInputError = (formElement, inputElement, errorMessage, inputErrorClass, errorClass) => {
   // Значение переменной errorElement — ошибка, которая найдена внутри formElement
-  const errorElement = formElement.querySelector(inputErrorClass);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(inputErrorClass);
   // передать текст ошибки в нужное место
   errorElement.textContent = errorMessage;
   // сделать ошибку видимой, когда в поле ввода добавят некорректный текст
   errorElement.classList.add(errorClass);
+  console.log
 };
+
+
 
 // ф-я спрячет ошибку
 const hideInputError = (formElement, inputElement, inputErrorClass, errorClass) => {
-  const errorElement = formElement.querySelector(inputErrorClass);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(inputErrorClass);
   // Скрыть ошибку под полем input
   errorElement.classList.remove(errorClass);
@@ -38,10 +34,11 @@ const hideInputError = (formElement, inputElement, inputErrorClass, errorClass) 
 };
 
 
+
 // ф-я проверяет элементы на корректность введённых данных и вызывает hideInputError или showInputError
-const checkInputValidity = (formElement, inputElement, inputErrorClass) => {
-  formElement.querySelector(inputErrorClass);
-  if (!formInput.validity.valid) {
+const checkInputValidity = (formElement, inputElement, /*inputErrorClass*/) => {
+  // formElement.querySelector(inputErrorClass);  // ???????
+  if (!inputElement.validity.valid) {
     //Если в поле введены невалидные данные, то вызываем ф-ю показать ошибку
     showInputError(formElement, inputElement, inputElement.validationMessage);   //  вторым аргументом передаем функции showError сообщение об ошибке в случае неудачной проверки
   } else {
@@ -66,7 +63,7 @@ const setEventListeners = (formElement, inputSelector, submitButtonSelector) => 
   // Обойдем массив в теле функции методом forEach, передав ему обработчик с параметром inputElement
   inputList.forEach((inputElement) => {
     // Добавим обработчик события input каждому элементу массива
-    inputElement.addEventListener('input', function () {
+    inputElement.addEventListener('input', () => {
       // Передаем методу addEventListener вторым аргументом обработчик, который проверяет валидность поля
       checkInputValidity(formElement, inputElement);
       });
@@ -113,7 +110,7 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
     // если да - добавим класс блокировки кнопки
     buttonElement.classList.add(inactiveButtonClass);
     // и удалим атрибут disabled
-    buttonElement.removeAttribute('disabled');
+    buttonElement.removeAttribute('disabled', true);
   } else {
     // иначе - удалим класс блокировки кнопки
     buttonElement.classList.remove(inactiveButtonClass);
