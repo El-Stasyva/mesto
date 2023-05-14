@@ -71,10 +71,6 @@ const getCardElement = function (cardInfo) {
   }
   
 // Вешаем слушатели кнопок
-  popupImgExit.addEventListener('click', function () {
-    closePopup(popupImageContainer);
-  });
-
   cardImage.addEventListener('click', handleBigImg);
   cardDeleteButton.addEventListener('click', handleDeleteCard);
   cardLikeButton.addEventListener('click', handleLikeCard);
@@ -90,6 +86,12 @@ initialCards.forEach(function (card) {
   photoGallerySection.append(element);
   
 });
+
+// Событие закрытия попапов
+popupImgExit.addEventListener('click', function () {
+  closePopup(popupImageContainer);
+});
+
 
 
 // Кликаем на карандаш для перехода в попап редактирования профиля
