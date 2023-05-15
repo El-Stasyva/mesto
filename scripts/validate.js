@@ -1,3 +1,16 @@
+// параметры, используемые в валидации
+const validationTools = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  spanErrorSelector: '.popup__error',
+  activeButtonClass: 'popup__button_enable',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error', // модификатор для input - переключение состояния полей (валидное/не валидное)
+  errorClass: 'popup__error_visible'  // модификатор для span - показать/скрыть ошибку
+};
+
+
 // ф-я запускает валидацию
 const enableValidation = (validationTools) => {
   /*console.log(validationTools);*/
@@ -23,17 +36,6 @@ console.log(formList);*/
 }
 
 
-// параметры, используемые в валидации
-const validationTools = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  spanErrorSelector: '.popup__error',
-  activeButtonClass: 'popup__button_enable',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error', // модификатор для input - переключение состояния полей (валидное/не валидное)
-  errorClass: 'popup__error_visible'  // модификатор для span - показать/скрыть ошибку
-};
 
 /*console.log(validationTools.inputErrorClass);*/
 
@@ -139,7 +141,7 @@ const hideInputError = (formElement, inputElement, validationTools) => {
     buttonElement.classList.add(validationTools.inactiveButtonClass);
     buttonElement.classList.remove(validationTools.activeButtonClass);
     // и добавим атрибут disabled
-    /*buttonElement.setAttribute('disabled', true);*/
+    buttonElement.setAttribute('disabled', true);
   }
   
   const enableButton = (buttonElement, validationTools) => {
