@@ -34,6 +34,8 @@ const popupCardCloseButton = document.querySelector('#close-card');
 const profileName = profile.querySelector('.profile__name');
 const profileJob = profile.querySelector('.profile__about-me');
 
+const popupPage = document.querySelectorAll('.popup');
+
 
 // Добавление 6 карточек при загрузке страницы c помощью JS (функция рендера)
 const getCardElement = function (cardInfo) {
@@ -108,9 +110,28 @@ addButton.addEventListener('click', function() {
  });
 
 
+ const handlePopupClose = (evt) => {
+  const popupOverlay = evt.target.classList.contains('popup'); 
+  const popupCloseButton = evt.target.classList.contains('popup__close-ikon');
+
+  if (popupOverlay || popupCloseButton) {
+    popupPage.forEach(closePopup);
+  }
+}; 
+
+
+ function pressKeyEsc (evt) {
+  if (evt.key === 'Escape') {
+    popupPage.forEach(closePopup);
+  }
+}
+
+
 // Функция закрытия попапа
 const closePopup = function (popup) {
   popup.classList.remove('popup_opened');
+  document.addEventListener('keydown', pressKeyEsc);
+  document.addEventListener('click', handlePopupClose);
 }
 
 // Функция открытия попапа
@@ -160,3 +181,10 @@ function handleSaveCard (evt) {
 
 // Обработчик «отправки» формы попапа с добавлением карточки места
 cardElement.addEventListener('submit', handleSaveCard);
+
+
+
+
+
+/*popupInfo.addEventListener('keydown', handleClosePopup);
+popupCard.addEventListener('keydown', handleClosePopup);*/
