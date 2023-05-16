@@ -56,14 +56,14 @@
         <h3 class="popup__heading">Новое место</h3>
         <form class="popup__form" name="popup-c" id="f-card" novalidate>
           <label class="popup__property">
-            <input type="text" class="popup__input" name="card-title" placeholder="Название" id="card-title" minlength="1" maxlength="30" required>
+            <input type="text" class="popup__input" name="card-title" placeholder="Название" id="card-title" minlength="2" maxlength="30" required>
             <span class="popup__error" id="card-title-error">Вы пропустили это поле.</span>
           </label>
           <label class="popup__property">
             <input type="url" class="popup__input" name="card-link" placeholder="Ссылка на картинку" id="card-link" required>
             <span class="popup__error" id="card-link-error">Введите адрес сайта.</span>
           </label>
-          <button type="submit" class="popup__button" id="save-button">Создать</button>
+          <button type="submit" class="popup__button" id="create-btn">Создать</button>
         </form>
         <button type ="button" class="popup__close-ikon" id="close-card"></button>
       </div>

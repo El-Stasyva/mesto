@@ -2,7 +2,7 @@
   display: flex;
   box-sizing: border-box;
   width: 430px;
-  height: 327px;
+  min-height: 327px;
   margin: 0;
   padding: 34px 36px;
   background-color: rgba(255, 255, 255);

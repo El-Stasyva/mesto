@@ -49,15 +49,14 @@ const setEventListeners = (formElement, validationTools) => {
 
     // Добавим обработчик события input каждому элементу массива
     inputElement.addEventListener('input', () => {
-     
+
+     // проверка состояния кнопки при изменении любого из полей
+      toggleButtonState(inputList, buttonElement, validationTools);
+
       // Передаем методу addEventListener вторым аргументом обработчик, который проверяет валидность поля
       checkInputValidity(formElement, inputElement, validationTools);
-    });
-
-      // проверка состояния кнопки при изменении любого из полей
-  toggleButtonState(inputList, buttonElement, validationTools);
-  });
-    
+    });  
+  });  
 }
 
 
@@ -147,7 +146,7 @@ const hideInputError = (formElement, inputElement, validationTools) => {
   // ф-я отвечает за блокировку кнопки «Отправить»
   // Первый параметр — массив полей, второй — кнопка «submit» у попапов
   const toggleButtonState = (inputList, buttonElement, validationTools) => {
-    
+
     // проверим есть ли в массиве inputList невалидные поля
     if (hasInvalidInput(inputList)) {
       disableButton(buttonElement, validationTools);
@@ -157,3 +156,8 @@ const hideInputError = (formElement, inputElement, validationTools) => {
   }
   
   enableValidation(validationTools);
+
+  /*export { toggleButtonState };*/
+  /*export { inputList };
+  export { buttonElement };
+  export { validationTools };*/
