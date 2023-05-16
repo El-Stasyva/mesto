@@ -1,6 +1,4 @@
 .popup__property {
-  /* суммарная высота союза полей (input + span), отступы, 12px - заложена высота для ошибки в 2 строки */
-  height: calc(44px + 12px + 5px);
+  min-height: 65px;
   color: #C4C4C4;
-  
 }
