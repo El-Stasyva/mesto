@@ -184,7 +184,10 @@ function handleSaveCard (evt) {
 
 // Отчистить форму попапа после отправки
   evt.target.reset();
-  popupCreateCardBtn.classList.add('popup__button_disabled');
+  // Добавить манипуляции с кнопкой "Создать" для дизактивации при незаполненных полях
+  // директивы import и export еще не проходили
+  popupCreateCardBtn.classList.add('popup__button_disabled');  
+  popupCreateCardBtn.setAttribute('disabled', true);
   closePopup(popupCard);
 };
 
