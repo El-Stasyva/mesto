@@ -35,7 +35,7 @@ const profileName = profile.querySelector('.profile__name');
 const profileJob = profile.querySelector('.profile__about-me');
 
 const popupPage = document.querySelectorAll('.popup');
-
+/*const popupSaveButton = document.querySelector('.popup_button');*/
 
 // Добавление 6 карточек при загрузке страницы c помощью JS (функция рендера)
 const getCardElement = function (cardInfo) {
@@ -65,7 +65,7 @@ const getCardElement = function (cardInfo) {
 
 
   //Функция увеличения одной фотографии из галереи
-  const handleBigImg = function() {
+  const handleBigImg = function () {
     openPopup(popupImageContainer);
     popupBigImg.src = cardInfo.link;
     popupBigImg.alt = cardInfo.name;
@@ -95,12 +95,13 @@ popupImgExit.addEventListener('click', function () {
 });
 
 
-
 // Кликаем на карандаш для перехода в попап редактирования профиля
 editButton.addEventListener('click', function() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+ 
   openPopup(popupInfo);
+  
 });
 
 
@@ -184,7 +185,22 @@ cardElement.addEventListener('submit', handleSaveCard);
 
 
 
+// Управление активацией кнопок submit
+function checkValidity (evt) {
+  const formNode = evt.target.form;
+  const isValid = formNode.checkValidity();
+  const popupSaveButton = formNode.querySelector('.popup__button');
+  
+  popupSaveButton.disabled = !isValid;
+  if (!formNode.isValid) {
+    popupSaveButton.classList.remove('popup__button_disabled');
+    
+  } else {
+    popupSaveButton.classList.add('popup__button_disabled');
+  }
+  
+}
+  
 
-
-/*popupInfo.addEventListener('keydown', handleClosePopup);
-popupCard.addEventListener('keydown', handleClosePopup);*/
+cardElement.addEventListener('input', checkValidity);
+infoElement.addEventListener('input', checkValidity);
