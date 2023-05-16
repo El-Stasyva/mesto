@@ -156,8 +156,3 @@ const hideInputError = (formElement, inputElement, validationTools) => {
   }
   
   enableValidation(validationTools);
-
-  /*export { toggleButtonState };*/
-  /*export { inputList };
-  export { buttonElement };
-  export { validationTools };*/

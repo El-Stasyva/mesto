@@ -1,8 +1,3 @@
-/*import { toggleButtonState }  from "./validate.js";*/
-/*import { inputList }  from "./validate.js";
-import { buttonElement }  from "./validate.js";
-import { validationTools }  from "./validate.js";*/
-
 // Переменные для работы с карточками в галерее фотографий
 const cardTemplate = document.querySelector('#card-template');
 const photoGallerySection = document.querySelector('.photo-gallery');
